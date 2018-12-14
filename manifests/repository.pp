@@ -30,7 +30,7 @@ class r::repository {
               release     => "${codename}/",
               repos       => '', # default repo is main (not present at cran)
               include => { 'src' => false },
-              key => { 'server' => 'keyserver.ubuntu.com', 'id' =>  'E298A3A825C0D65DFD57CBB651716619E084DAB9'},
+              key => { 'server' => 'hkp://keyserver.ubuntu.com:80', 'id' =>  'E298A3A825C0D65DFD57CBB651716619E084DAB9'},
               notify      => Class['apt::update'],
             }
     }
