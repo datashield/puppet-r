@@ -27,10 +27,10 @@ class r::repository {
       apt::source { 'r-project':
               location    => "http://cran.r-project.org/bin/linux/${os}",
               # the '/' must be present, otherwise repo name is required
-              release     => "${codename}/",
+              release     => "${codename}-cran40/",
               repos       => '', # default repo is main (not present at cran)
-              include => { 'src' => false },
-              key => { 'server' => 'keyserver.ubuntu.com', 'id' =>  'E298A3A825C0D65DFD57CBB651716619E084DAB9'},
+              include     => { 'src' => false },
+              key         => { 'server' => 'hkp://keyserver.ubuntu.com:80', 'id' => 'E298A3A825C0D65DFD57CBB651716619E084DAB9'},
               notify      => Class['apt::update'],
             }
     }
